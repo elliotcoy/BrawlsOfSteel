@@ -240,7 +240,7 @@
     <sprite>sprites\ShadowFlip</sprite>
     <sprite>sprites\shadowVertLight</sprite>
     <sprite>sprites\AnyKeyToGoBackSprite</sprite>
-    <sprite>sprites\sprite118</sprite>
+    <sprite>sprites\MainMenuText</sprite>
     <sprite>sprites\playerNumberSprite</sprite>
     <sprites name="IntroAnimation">
       <sprite>sprites\fireTown</sprite>
@@ -250,6 +250,7 @@
     <sprite>sprites\OuterRoomSprite</sprite>
     <sprite>sprites\badGuyShot</sprite>
     <sprite>sprites\goodGuyShot</sprite>
+    <sprite>sprites\spr_MainMenuButton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -484,6 +485,7 @@
         <object>objects\CampaignButton</object>
         <object>objects\MultiplayerButton</object>
         <object>objects\CreditsButton</object>
+        <object>objects\ExitButton</object>
       </objects>
     </objects>
     <objects name="Inventory">
@@ -804,7 +806,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41959.1556643171</constant>
+    <constant name="GM_build_date">41959.3057443056</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>

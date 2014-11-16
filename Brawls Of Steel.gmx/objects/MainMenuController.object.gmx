@@ -183,8 +183,8 @@ if(jump_check())
 {   switch(main_menu)
 {
     case 1: room_goto(OverMap)      break;  //Single Player
-    case 2: room_goto(MPMapSelect)  break;  //Multiplayer
-    case 3: room_goto(Credits1Room) break;  //Credits
+    case 2: room_goto(SettingsRoom) break;  //Multiplayer
+    case 3: room_goto(creditsNew)   break;  //Credits
     case 4: game_end()              break;  //Quit
 }
 }
