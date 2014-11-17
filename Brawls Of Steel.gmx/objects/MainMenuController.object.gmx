@@ -155,23 +155,36 @@ if(jump_check_pressed())
             <kind>1</kind>
             <string>///Main Menu Buttons Code
 
-//Move down selection (+)
+//Input Checking
+ //Move down selection (++)
 if(down_check_pressed())
-{   main_menu += 1;
-}
-//Move up selection (-)
+{   main_menu += 2;
+}//Move up selection (--)
 if(up_check_pressed())
+{   main_menu -= 2;
+}//Move right selection (+)
+if(right_check_pressed())
+{   main_menu += 1;
+}//Move left selection (-)
+if(left_check_pressed())
 {   main_menu -= 1;
 }
 
-
-// Check lower bounds (+)
-if(main_menu &gt; 4)
-{   main_menu = 1;
+//Boundry Checking
+ // Check upper bounds (+)
+if(main_menu = 5)
+{   main_menu = 3;
+}// Check upper bounds (++)
+if(main_menu = 6)
+{   main_menu = 2;
 }
-// Check upper bounds (-)
-if(main_menu &lt; 1)
-{   main_menu = 4;
+// Check lower bounds (-)
+if(main_menu = 0)
+{   main_menu = 2;
+}
+// Check lower bounds (--)
+if(main_menu = -1)
+{   main_menu = 3;
 }
 
 
@@ -179,14 +192,14 @@ if(main_menu &lt; 1)
   START MENU OPTIONS
  ***************************************************/
 
-if(jump_check())
+if(jump_check() or boost_check())
 {   switch(main_menu)
-{
+ {
     case 1: room_goto(OverMap)      break;  //Single Player
     case 2: room_goto(SettingsRoom) break;  //Multiplayer
     case 3: room_goto(creditsNew)   break;  //Credits
     case 4: game_end()              break;  //Quit
-}
+ }
 }
 
 /***************************************************

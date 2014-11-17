@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar numPlayersButtons;
+            <string>///Logan's Code
+/*
+globalvar numPlayersButtons;
 numPlayersButtons = 0;
 globalvar selectedPlayersButton;
 selectedPlayersButton = 0;
@@ -65,6 +67,48 @@ globalvar selectedSettingsRow;
 selectedSettingsRow = 0;
 
 botDifficulty = 3;
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initial Variables
+globalvar numPlayers;
+numPlayers = 0;
+globalvar numCPUs;
+numCPUs = 0;
+globalvar lifeCount;
+lifeCount = 0;
+globalvar backNext;
+backNext = 0;
+globalvar settingsVal; //0 = numPlayers, 1 = numCPUs, 2 = lifeCount, 3 = backNext
+settingsVal = 0;
+
+botDifficulty = 3;
+
+
+//globalvar creditLimit;
+//globalvar timeLimit;
+
+//first time check
+firstTimeRun = false;//????????????
+
 </string>
           </argument>
         </arguments>
@@ -87,7 +131,9 @@ botDifficulty = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!firstTimeRun) 
+            <string>///Logan's Code
+/*
+if(!firstTimeRun) 
 {
     selectedSettingsButton = numPlayersButtons[selectedPlayersButton];
     selectedSettingsRow = 0;
@@ -299,6 +345,7 @@ if(up_check_pressed())
         selectedSettingsButton.state = 3;
         selectedSettingsButton = numCPUsButtons[selectedCPUsButton];
     }*/
+/*
     //Lives Row
     else if(selectedSettingsRow == 3)
     {
@@ -339,6 +386,7 @@ if(down_check_pressed())
         selectedSettingsButton.state = 3;
         selectedSettingsButton = livesButtons[selectedLivesButton];
     }*/
+/*
     //Lives Row
     else if(selectedSettingsRow == 3)
     {
@@ -360,6 +408,151 @@ if(jump_check_pressed())
     audio_play_sound(MenuConfirmationSound,1,false);
     selectedSettingsButton.alarm[1] = true;
 }
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Button Select Code
+
+/***************************************************
+  START ROWS
+ ***************************************************/
+//down (row selection)
+if(down_check_pressed()) //(+)
+{   settingsVal += 1;
+}
+//up (row selection)
+if(up_check_pressed()) //(-)
+{   settingsVal -= 1;
+}
+//upper bound
+if(settingsVal &gt; 3)
+{   settingsVal = 0;
+}
+//lower bound
+if(settingsVal &lt; 0)
+{   settingsVal = 3;
+}
+
+/***************************************************
+  END ROWS
+ ***************************************************/
+
+/***************************************************
+  START COLUMNS
+ ***************************************************/
+
+//left (column selection)
+if(right_check_pressed()) //(+)
+{   
+    if(settingsVal = 0) //Number of Players
+    {   numPlayers += 1;
+        numPlayers = numPlayers mod 4;//up to 4 players
+    }
+    if(settingsVal = 1) //Number of Computers
+    {   numCPUs += 1;
+        numCPUs = numCPUs mod 3;//up to 3 computers
+    }
+    if(settingsVal = 2) //Number of Lives
+    {   lifeCount += 1;
+        lifeCount = lifeCount mod 9;//up to 9 lives
+    }
+    if(settingsVal = 3) //Back or Next
+    {   backNext += 1;
+        backNext = backNext mod 2;//true/false, 1/0, next/back
+    }
+}
+
+//left (column selection)
+if(left_check_pressed()) //(-)
+{   
+    if(settingsVal = 0) //Number of Players
+    {   numPlayers -= 1;
+        if(numPlayers &lt; 0) //Lower Bound Check
+        {   numPlayers = 3;
+        }
+    }
+    if(settingsVal = 1) //Number of Computers
+    {   numCPUs -= 1;
+        if(numCPUs &lt; 0) //Lower Bound Check
+        {   numCPUs = 2;
+        }
+    }
+    if(settingsVal = 2) //Number of Lives
+    {   lifeCount -= 1;
+        if(lifeCount &lt; 0) //Lower Bound Check
+        {   lifeCount = 8;
+        }
+    }
+    if(settingsVal = 3) //Back or Next
+    {   backNext -= 1;
+        if(backNext &lt; 0) //Lower Bound Check
+        {   backNext = 1;
+        }
+    }
+}
+
+/***************************************************
+  END COLUMNS
+ ***************************************************/
+
+/***************************************************
+  START BUTTON PRESS
+ ***************************************************/
+
+if(jump_check() or boost_check())
+{
+    switch(settingsVal)
+    {
+        case(0):// numPlayers
+                settingsVal++;
+            break;
+        case(1):// numCPUs
+                settingsVal++;
+            break;
+        case(2):// lifeCount
+                settingsVal++;
+                backNext = 1;
+            break;
+        case(3):// backNext
+                if(backNext) //True = Next
+                  room_goto(MultiplayerLoadoutRoom);
+                else //False = Back
+                  room_goto(MenuRoom);
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -382,7 +575,8 @@ if(jump_check_pressed())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>selectedSettingsButton.alarm[1] = true;
+            <string>///Logan's Code
+//selectedSettingsButton.alarm[1] = true;
 </string>
           </argument>
         </arguments>

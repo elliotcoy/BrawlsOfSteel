@@ -154,6 +154,7 @@
       <sprite>sprites\MGoonFace2</sprite>
     </sprites>
     <sprites name="Buttons">
+      <sprite>sprites\spr_MainMenuButton</sprite>
       <sprite>sprites\HeadButtonSprite</sprite>
       <sprite>sprites\TorsoButtonSprite</sprite>
       <sprite>sprites\LArmButtonSprite</sprite>
@@ -189,6 +190,10 @@
         <sprite>sprites\Button5000CredsSprite</sprite>
         <sprite>sprites\BackButtonSprite</sprite>
         <sprite>sprites\NextButtonSprite</sprite>
+      </sprites>
+      <sprites name="MultiPlayer">
+        <sprite>sprites\backNextSprite</sprite>
+        <sprite>sprites\mpSettingsButtonSprite</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\PulsingEnterSprite</sprite>
@@ -250,7 +255,6 @@
     <sprite>sprites\OuterRoomSprite</sprite>
     <sprite>sprites\badGuyShot</sprite>
     <sprite>sprites\goodGuyShot</sprite>
-    <sprite>sprites\spr_MainMenuButton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -455,6 +459,11 @@
       <object>objects\SecondaryColorButton</object>
       <object>objects\EnergyColorButton</object>
       <objects name="SettingsButtons">
+        <object>objects\backButton</object>
+        <object>objects\numPlayersButton</object>
+        <object>objects\nextButton</object>
+      </objects>
+      <objects name="OldSettingsButtons">
         <object>objects\NoTimeLimitButton</object>
         <object>objects\Time1MinuteButton</object>
         <object>objects\Time3MinuteButton</object>
@@ -478,8 +487,8 @@
         <object>objects\NumCreds3000Button</object>
         <object>objects\NumCreds4000Button</object>
         <object>objects\NumCreds5000Button</object>
-        <object>objects\BackButton</object>
-        <object>objects\NextButton</object>
+        <object>objects\oldBackButton</object>
+        <object>objects\oldNextButton</object>
       </objects>
       <objects name="MainMenu">
         <object>objects\CampaignButton</object>
@@ -806,7 +815,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41959.3057443056</constant>
+    <constant name="GM_build_date">41960.446003206</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
