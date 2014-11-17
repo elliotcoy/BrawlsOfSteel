@@ -27,12 +27,12 @@
             <kind>1</kind>
             <string>///Highlight State Code
 if(distance_to_point(mouse_x,mouse_y) == 0)
-{   main_menu = 1;
+{   main_menu = 0.0;
     if(mouse_check_button_released(mb_left))
     {   room_goto(OverMap);
     }
 }
-if(main_menu = 1)
+if(main_menu = 0.0)
 {   state = 1;
 }
 else

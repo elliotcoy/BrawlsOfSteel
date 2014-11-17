@@ -27,12 +27,12 @@
             <kind>1</kind>
             <string>///Highlight State Code
 if(distance_to_point(mouse_x,mouse_y) == 0)
-{   main_menu = 4;
+{   main_menu = 1.1;
     if(mouse_check_button_released(mb_left))
     {   game_end();
     }
 }
-if(main_menu = 4)
+if(main_menu = 1.1)
 {   state = 1;
 }
 else

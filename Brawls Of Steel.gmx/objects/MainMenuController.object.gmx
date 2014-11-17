@@ -55,7 +55,7 @@ selectedMenuButton = 0;
             <kind>1</kind>
             <string>///Initialize Variables
 globalvar main_menu;
-main_menu = 1;
+main_menu = 0.0;//x.y
 </string>
           </argument>
         </arguments>
@@ -158,34 +158,38 @@ if(jump_check_pressed())
 //Input Checking
  //Move down selection (++)
 if(down_check_pressed())
-{   main_menu += 2;
+{   if((main_menu*10) mod 2){main_menu -= 0.1;}else{main_menu += 0.1;}// Math stuff, switch T/F for tens decimal
 }//Move up selection (--)
 if(up_check_pressed())
-{   main_menu -= 2;
+{   if((main_menu*10) mod 2){main_menu -= 0.1;}else{main_menu += 0.1;}// Math stuff, switch T/F for tens decimal
 }//Move right selection (+)
 if(right_check_pressed())
-{   main_menu += 1;
+{   if(main_menu mod 2 &lt; 1){main_menu += 1;}else{main_menu -= 1;}// Math stuff, switch T/F, ignores tens decimal
 }//Move left selection (-)
 if(left_check_pressed())
-{   main_menu -= 1;
+{   if(main_menu mod 2 &lt; 1){main_menu += 1;}else{main_menu -= 1;}// Math stuff, switch T/F, ignores tens decimal
 }
 
-//Boundry Checking
+/*/Boundry Checking
  // Check upper bounds (+)
-if(main_menu = 5)
-{   main_menu = 3;
+if(main_menu &gt;= 2.0)
+{   main_menu -= 2;
 }// Check upper bounds (++)
-if(main_menu = 6)
-{   main_menu = 2;
+if(main_menu mod 1 &gt; 0.1)
+{   main_menu -= 0.2;
 }
 // Check lower bounds (-)
-if(main_menu = 0)
-{   main_menu = 2;
+if(main_menu &lt;= -0.2)
+{   main_menu += 2;
 }
 // Check lower bounds (--)
-if(main_menu = -1)
-{   main_menu = 3;
+if(main_menu == 0.99)
+{   main_menu = 1.1;
 }
+if(main_menu &lt; 0)
+{   main_menu += 0.2;
+}
+*/
 
 
 /***************************************************
@@ -195,10 +199,10 @@ if(main_menu = -1)
 if(jump_check() or boost_check())
 {   switch(main_menu)
  {
-    case 1: room_goto(OverMap)      break;  //Single Player
-    case 2: room_goto(SettingsRoom) break;  //Multiplayer
-    case 3: room_goto(creditsNew)   break;  //Credits
-    case 4: game_end()              break;  //Quit
+    case 0.0: room_goto(OverMap)      break;  //Single Player
+    case 1.0: room_goto(SettingsRoom) break;  //Multiplayer
+    case 0.1: room_goto(creditsNew)   break;  //Credits
+    case 1.1: game_end()              break;  //Quit
  }
 }
 
