@@ -154,50 +154,54 @@
       <sprite>sprites\MGoonFace2</sprite>
     </sprites>
     <sprites name="Buttons">
-      <sprite>sprites\spr_MainMenuButton</sprite>
-      <sprite>sprites\HeadButtonSprite</sprite>
-      <sprite>sprites\TorsoButtonSprite</sprite>
-      <sprite>sprites\LArmButtonSprite</sprite>
-      <sprite>sprites\RArmButtonSprite</sprite>
-      <sprite>sprites\LegsButtonSprite</sprite>
-      <sprite>sprites\BackPackButtonSprite</sprite>
-      <sprite>sprites\PrimaryColorButtonSprite</sprite>
-      <sprite>sprites\SecondaryColorButtonSprite</sprite>
-      <sprite>sprites\EnergyColorButtonSprite</sprite>
-      <sprite>sprites\ConfirmColorButtonSprite</sprite>
-      <sprite>sprites\MultiplayerButtonSprite</sprite>
-      <sprite>sprites\CampaignButtonSprite</sprite>
-      <sprite>sprites\TestMenuButtonSprite</sprite>
-      <sprite>sprites\NextMPButtonSprite</sprite>
-      <sprite>sprites\BackMPButtonSprite</sprite>
-      <sprite>sprites\LockInMPButtonSprite</sprite>
-      <sprites name="SettingsButtons">
-        <sprite>sprites\NoLimitButtonSprite</sprite>
-        <sprite>sprites\NumPlayers0ButtonSprite</sprite>
-        <sprite>sprites\NumPlayers1ButtonSprite</sprite>
-        <sprite>sprites\NumPlayers2ButtonSprite</sprite>
-        <sprite>sprites\NumPlayers3ButtonSprite</sprite>
-        <sprite>sprites\NumPlayers4ButtonSprite</sprite>
-        <sprite>sprites\Button1Sprite</sprite>
-        <sprite>sprites\Button3Sprite</sprite>
-        <sprite>sprites\Button5Sprite</sprite>
-        <sprite>sprites\Button8Sprite</sprite>
-        <sprite>sprites\Button10Sprite</sprite>
-        <sprite>sprites\Button1000CredsSprite</sprite>
-        <sprite>sprites\Button2000CredsSprite</sprite>
-        <sprite>sprites\Button3000CredsSprite</sprite>
-        <sprite>sprites\Button4000CredsSprite</sprite>
-        <sprite>sprites\Button5000CredsSprite</sprite>
-        <sprite>sprites\BackButtonSprite</sprite>
-        <sprite>sprites\NextButtonSprite</sprite>
-      </sprites>
       <sprites name="MultiPlayer">
         <sprite>sprites\backNextSprite</sprite>
         <sprite>sprites\mpSettingsButtonSprite</sprite>
+        <sprite>sprites\spr_arrowsButton</sprite>
+        <sprite>sprites\spr_MainMenuButton</sprite>
+        <sprite>sprites\greenGlowNums</sprite>
+      </sprites>
+      <sprites name="OLD_Buttons">
+        <sprites name="Old_SettingsButtons">
+          <sprite>sprites\NoLimitButtonSprite</sprite>
+          <sprite>sprites\NumPlayers0ButtonSprite</sprite>
+          <sprite>sprites\NumPlayers1ButtonSprite</sprite>
+          <sprite>sprites\NumPlayers2ButtonSprite</sprite>
+          <sprite>sprites\NumPlayers3ButtonSprite</sprite>
+          <sprite>sprites\NumPlayers4ButtonSprite</sprite>
+          <sprite>sprites\Button1Sprite</sprite>
+          <sprite>sprites\Button3Sprite</sprite>
+          <sprite>sprites\Button5Sprite</sprite>
+          <sprite>sprites\Button8Sprite</sprite>
+          <sprite>sprites\Button10Sprite</sprite>
+          <sprite>sprites\Button1000CredsSprite</sprite>
+          <sprite>sprites\Button2000CredsSprite</sprite>
+          <sprite>sprites\Button3000CredsSprite</sprite>
+          <sprite>sprites\Button4000CredsSprite</sprite>
+          <sprite>sprites\Button5000CredsSprite</sprite>
+          <sprite>sprites\BackButtonSprite</sprite>
+          <sprite>sprites\NextButtonSprite</sprite>
+        </sprites>
+        <sprite>sprites\LockInMPButtonSprite</sprite>
+        <sprite>sprites\BackMPButtonSprite</sprite>
+        <sprite>sprites\NextMPButtonSprite</sprite>
+        <sprite>sprites\TestMenuButtonSprite</sprite>
+        <sprite>sprites\CampaignButtonSprite</sprite>
+        <sprite>sprites\MultiplayerButtonSprite</sprite>
+        <sprite>sprites\ConfirmColorButtonSprite</sprite>
+        <sprite>sprites\EnergyColorButtonSprite</sprite>
+        <sprite>sprites\SecondaryColorButtonSprite</sprite>
+        <sprite>sprites\PrimaryColorButtonSprite</sprite>
+        <sprite>sprites\BackPackButtonSprite</sprite>
+        <sprite>sprites\LegsButtonSprite</sprite>
+        <sprite>sprites\LArmButtonSprite</sprite>
+        <sprite>sprites\RArmButtonSprite</sprite>
+        <sprite>sprites\TorsoButtonSprite</sprite>
+        <sprite>sprites\HeadButtonSprite</sprite>
+        <sprite>sprites\PulsingEnterSprite</sprite>
+        <sprite>sprites\InventoryUINameSprite</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\PulsingEnterSprite</sprite>
-    <sprite>sprites\InventoryUINameSprite</sprite>
     <sprite>sprites\InventoryUIItemSprite</sprite>
     <sprite>sprites\InventoryUIItemMPSprite</sprite>
     <sprite>sprites\OnePixelSprite</sprite>
@@ -467,6 +471,8 @@
         <object>objects\numCPUsButton</object>
         <object>objects\lifeCountButton</object>
         <object>objects\nextButton</object>
+        <object>objects\arrowsNumPlayer</object>
+        <object>objects\arrowsNumCpus</object>
       </objects>
       <objects name="OldSettingsButtons">
         <object>objects\NoTimeLimitButton</object>
@@ -796,7 +802,7 @@
     <room>rooms\RadioRoom</room>
     <room>rooms\ControlsRoom</room>
     <room>rooms\InventoryRoom</room>
-    <room>rooms\SettingsRoom</room>
+    <room>rooms\MPSettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
     <room>rooms\room9</room>
     <room>rooms\Credits1Room</room>
@@ -820,7 +826,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41961.0990590741</constant>
+    <constant name="GM_build_date">41961.8197837616</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>

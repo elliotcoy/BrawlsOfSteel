@@ -57,6 +57,8 @@
     <instance objName="numPlayersButton" x="170" y="250" name="inst_708B17AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="numCPUsButton" x="170" y="370" name="inst_169C84ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="lifeCountButton" x="176" y="494" name="inst_7A50392C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="arrowsNumPlayer" x="460" y="250" name="inst_9299AD67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="arrowsNumCpus" x="460" y="370" name="inst_688A189D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

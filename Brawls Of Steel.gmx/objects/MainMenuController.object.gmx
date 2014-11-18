@@ -178,7 +178,7 @@ if(jump_check() or boost_check())
 {   switch(main_menu)
  {
     case 0.0: room_goto(OverMap)      break;  //Single Player
-    case 1.0: room_goto(SettingsRoom) break;  //Multiplayer
+    case 1.0: room_goto(MPSettingsRoom) break;  //Multiplayer
     case 0.1: room_goto(creditsNew)   break;  //Credits
     case 1.1: game_end()              break;  //Quit
  }
