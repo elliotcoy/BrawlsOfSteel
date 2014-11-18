@@ -517,7 +517,7 @@ if(left_check_pressed()) //(-)
   START BUTTON PRESS
  ***************************************************/
 
-if(jump_check() or boost_check())
+if(jump_check_pressed() or boost_check_pressed())
 {
     switch(settingsVal)
     {

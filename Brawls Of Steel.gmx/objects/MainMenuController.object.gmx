@@ -170,28 +170,6 @@ if(left_check_pressed())
 {   if(main_menu mod 2 &lt; 1){main_menu += 1;}else{main_menu -= 1;}// Math stuff, switch T/F, ignores tens decimal
 }
 
-/*/Boundry Checking
- // Check upper bounds (+)
-if(main_menu &gt;= 2.0)
-{   main_menu -= 2;
-}// Check upper bounds (++)
-if(main_menu mod 1 &gt; 0.1)
-{   main_menu -= 0.2;
-}
-// Check lower bounds (-)
-if(main_menu &lt;= -0.2)
-{   main_menu += 2;
-}
-// Check lower bounds (--)
-if(main_menu == 0.99)
-{   main_menu = 1.1;
-}
-if(main_menu &lt; 0)
-{   main_menu += 0.2;
-}
-*/
-
-
 /***************************************************
   START MENU OPTIONS
  ***************************************************/
