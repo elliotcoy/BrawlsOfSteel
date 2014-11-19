@@ -464,7 +464,7 @@ if(right_check_pressed()) //(+)
 {   
     if(settingsVal = 0) //Number of Players
     {   numPlayers += 1;
-        numPlayers = numPlayers mod 4;//up to 4 players
+        //numPlayers = numPlayers mod 4;//up to 4 players
     }
     if(settingsVal = 1) //Number of Computers
     {   numCPUs += 1;
