@@ -29,7 +29,7 @@
 if(distance_to_point(mouse_x,mouse_y) == 0)
 {   main_menu = 1.0;
     if(mouse_check_button_released(mb_left))
-    {   room_goto(SettingsRoom);
+    {   room_goto(MPSettingsRoom);
     }
 }
 if(main_menu = 1.0)

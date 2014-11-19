@@ -114,6 +114,54 @@ firstTimeRun = false;//????????????
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Boundry Checks
+
+if(numPlayers &lt; 1) //Lower Bound Check
+{   numPlayers = 4;
+}
+if(numCPUs &lt; 0) //Lower Bound Check
+{   numCPUs = 3;
+}
+if(lifeCount &lt; 1) //Lower Bound Check
+{   lifeCount = 9;
+}
+if(backNext &lt; 0) //Lower Bound Check
+{   backNext = 1;
+}
+if(numPlayers &gt; 4) //Upper Bound Check
+{   numPlayers = 1;
+}
+if(numCPUs &gt; 3) //Upper Bound Check
+{   numCPUs = 0;
+}
+if(lifeCount &gt; 9) //Upper Bound Check
+{   lifeCount = 1;
+}
+if(backNext &gt; 1) //Upper Bound Check
+{   backNext = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -459,53 +507,39 @@ if(settingsVal &lt; 0)
   START COLUMNS
  ***************************************************/
 
-//left (column selection)
+//right (column selection)
 if(right_check_pressed()) //(+)
-{   
-    if(settingsVal = 0) //Number of Players
-    {   numPlayers += 1;
-        //numPlayers = numPlayers mod 4;//up to 4 players
-    }
-    if(settingsVal = 1) //Number of Computers
-    {   numCPUs += 1;
-        numCPUs = numCPUs mod 3;//up to 3 computers
-    }
-    if(settingsVal = 2) //Number of Lives
-    {   lifeCount += 1;
-        lifeCount = lifeCount mod 9;//up to 9 lives
-    }
-    if(settingsVal = 3) //Back or Next
-    {   backNext += 1;
-        backNext = backNext mod 2;//true/false, 1/0, next/back
+{   switch(settingsVal)
+    {   case 0:
+        numPlayers += 1;
+            break;
+        case 1:
+        numCPUs += 1;
+            break;
+        case 2:
+        lifeCount += 1;
+            break;
+        case 3:
+        backNext += 1;
+            break;
     }
 }
 
 //left (column selection)
 if(left_check_pressed()) //(-)
-{   
-    if(settingsVal = 0) //Number of Players
-    {   numPlayers -= 1;
-        if(numPlayers &lt; 0) //Lower Bound Check
-        {   numPlayers = 3;
-        }
-    }
-    if(settingsVal = 1) //Number of Computers
-    {   numCPUs -= 1;
-        if(numCPUs &lt; 0) //Lower Bound Check
-        {   numCPUs = 2;
-        }
-    }
-    if(settingsVal = 2) //Number of Lives
-    {   lifeCount -= 1;
-        if(lifeCount &lt; 0) //Lower Bound Check
-        {   lifeCount = 8;
-        }
-    }
-    if(settingsVal = 3) //Back or Next
-    {   backNext -= 1;
-        if(backNext &lt; 0) //Lower Bound Check
-        {   backNext = 1;
-        }
+{   switch(settingsVal)
+    {   case 0:
+        numPlayers -= 1;
+            break;
+        case 1:
+        numCPUs -= 1;
+            break;
+        case 2:
+        lifeCount -= 1;
+            break;
+        case 3:
+        backNext -= 1;
+            break;
     }
 }
 
@@ -517,42 +551,28 @@ if(left_check_pressed()) //(-)
   START BUTTON PRESS
  ***************************************************/
 
-if(jump_check_pressed() or boost_check_pressed())
+if(jump_check_released() or boost_check_released())
 {
     switch(settingsVal)
     {
-        case(0):// numPlayers
-                settingsVal++;
+        case(0):            // numPlayers
+        settingsVal++;
             break;
-        case(1):// numCPUs
-                settingsVal++;
+        case(1):            // numCPUs
+        settingsVal++;
             break;
-        case(2):// lifeCount
-                settingsVal++;
-                backNext = 1;
+        case(2):            // lifeCount
+        settingsVal++;
+        backNext = 1;
             break;
-        case(3):// backNext
-                if(backNext) //True = Next
-                  room_goto(MultiplayerLoadoutRoom);
-                else //False = Back
-                  room_goto(MenuRoom);
+        case(3):            // backNext
+        if(backNext)        //True = Next
+          room_goto(MultiplayerLoadoutRoom);
+        else                //False = Back
+          room_goto(MenuRoom);
             break;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </string>
           </argument>
         </arguments>

@@ -174,7 +174,7 @@ if(left_check_pressed())
   START MENU OPTIONS
  ***************************************************/
 
-if(jump_check() or boost_check())
+if(jump_check_released() or boost_check_released())
 {   switch(main_menu)
  {
     case 0.0: room_goto(OverMap)      break;  //Single Player

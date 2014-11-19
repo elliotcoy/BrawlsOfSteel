@@ -38,11 +38,9 @@ if(mouse_check_button_pressed(mb_left))
 }
 if(settingsVal = 1)
 {   if(left_check_pressed())
-    {   numCPUs -= 1;
-        left_pressed = true;
+    {   left_pressed = true;
     }if(right_check_pressed())
-    {   numCPUs -= 1;
-        right_pressed = true;
+    {   right_pressed = true;
     }
 }
 </string>

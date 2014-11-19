@@ -30,19 +30,20 @@ right_pressed = false;
 if(mouse_check_button_pressed(mb_left))
 {   if(distance_to_point(mouse_x-80,mouse_y) == 0)
     {   settingsVal = 0;
-        numPlayers -= 1;
+        numPlayers += 1;
+        right_pressed = true;
     }if(distance_to_point(mouse_x+80,mouse_y) == 0)
     {   settingsVal = 0;
-        numPlayers += 1;
+        numPlayers -= 1;
+        left_pressed = true;
     }
 }
+
 if(settingsVal = 0)
 {   if(left_check_pressed())
-    {   numPlayers -= 1;
-        left_pressed = true;
+    {   left_pressed = true;
     }if(right_check_pressed())
-    {   numPlayers -= 1;
-        right_pressed = true;
+    {   right_pressed = true;
     }
 }
 </string>
@@ -84,10 +85,11 @@ if(settingsVal = 0)
 }
 else
 {   draw_sprite_ext(sprite_index,0,x-80,y,1,1,0,c_white,1);// Left Arrow Unlit
-    draw_sprite_ext(sprite_index,2,x-80,y,1,1,0,c_white,1);// Right Arrow Unlit
+    draw_sprite_ext(sprite_index,2,x+80,y,1,1,0,c_white,1);// Right Arrow Unlit
 }
 
 draw_sprite_ext(greenGlowNums,numPlayers,x,y,1,1,0,c_white,1);
+draw_text(x+200,y,numPlayers)
 </string>
           </argument>
         </arguments>

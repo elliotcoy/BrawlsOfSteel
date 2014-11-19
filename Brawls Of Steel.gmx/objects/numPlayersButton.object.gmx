@@ -55,7 +55,7 @@
 }else
 {   draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha); //Unlit
 }
-draw_sprite_ext(sprite_index,2,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha); //Back
+draw_sprite_ext(sprite_index,2,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha); //Players
 </string>
           </argument>
         </arguments>
