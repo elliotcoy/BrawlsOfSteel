@@ -89,7 +89,6 @@ else
 }
 
 draw_sprite_ext(greenGlowNums,numPlayers,x,y,1,1,0,c_white,1);
-draw_text(x+200,y,numPlayers)
 </string>
           </argument>
         </arguments>
